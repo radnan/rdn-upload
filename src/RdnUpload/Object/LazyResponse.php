@@ -1,8 +1,6 @@
 <?php
 
-namespace RdnUpload;
-
-use RdnUpload\Object\ObjectInterface;
+namespace RdnUpload\Object;
 
 /**
  * Renders a file's content lazily.

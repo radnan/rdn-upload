@@ -1,0 +1,24 @@
+{
+	"name": "radnan/rdn-upload",
+	"description": "Zend Framework 2 file upload module",
+	"keywords": ["zf2", "zend", "file", "upload", "cloud"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "radnan",
+			"email": "rafiadnan47@gmail.com"
+		}
+	],
+	"require": {
+		"zendframework/zend-http": "2.*",
+		"zendframework/zend-mvc": "2.*",
+		"zendframework/zend-servicemanager": "2.*",
+		"zendframework/zend-stdlib": "2.*",
+		"zendframework/zend-view": "2.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"RdnUpload\\": "src/"
+		}
+	}
+}

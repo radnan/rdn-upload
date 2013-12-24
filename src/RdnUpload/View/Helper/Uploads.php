@@ -33,7 +33,7 @@ class Uploads extends AbstractHelper
 			return $this;
 		}
 
-		return $this->container->get($id);
+		return $this->get($id);
 	}
 
 	/**
@@ -44,5 +44,25 @@ class Uploads extends AbstractHelper
 	public function getContainer()
 	{
 		return $this->container;
+	}
+
+	/**
+	 * @param string $id
+	 *
+	 * @return ObjectInterface
+	 */
+	public function get($id)
+	{
+		return $this->container->get($id);
+	}
+
+	/**
+	 * @param string $id
+	 *
+	 * @return boolean
+	 */
+	public function has($id)
+	{
+		return $this->container->has($id);
 	}
 }

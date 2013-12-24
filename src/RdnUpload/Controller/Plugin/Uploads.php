@@ -3,6 +3,7 @@
 namespace RdnUpload\Controller\Plugin;
 
 use RdnUpload\ContainerInterface;
+use RdnUpload\File\FileInterface;
 use RdnUpload\LazyResponse;
 use RdnUpload\Object\ObjectInterface;
 use Zend\Http\PhpEnvironment\Response as HttpResponse;
@@ -37,7 +38,7 @@ class Uploads extends AbstractPlugin
 			return $this;
 		}
 
-		return $this->container->get($id);
+		return $this->get($id);
 	}
 
 	/**
@@ -112,5 +113,53 @@ class Uploads extends AbstractPlugin
 	public function getContainer()
 	{
 		return $this->container;
+	}
+
+	/**
+	 * @param array|FileInterface $input
+	 *
+	 * @return string
+	 */
+	public function upload($input)
+	{
+		return $this->container->upload($input);
+	}
+
+	/**
+	 * @param string $id
+	 *
+	 * @return ObjectInterface
+	 */
+	public function get($id)
+	{
+		return $this->container->get($id);
+	}
+
+	/**
+	 * @param string $id
+	 *
+	 * @return FileInterface
+	 */
+	public function download($id)
+	{
+		return $this->container->download($id);
+	}
+
+	/**
+	 * @param string $id
+	 *
+	 * @return boolean
+	 */
+	public function has($id)
+	{
+		return $this->container->has($id);
+	}
+
+	/**
+	 * @param string $id
+	 */
+	public function delete($id)
+	{
+		return $this->container->delete($id);
 	}
 }

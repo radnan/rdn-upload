@@ -52,14 +52,14 @@ class FooController
 	public function viewAction()
 	{
 		$id = /* ... */;
-		$object = $this->uploads($id);
+		$object = $this->uploads()->get($id);
 	}
 }
 ~~~
 
 todo
 
-### Response
+### Authorization
 
 In many cases instead of allowing public web access to uploaded files you would like to place them behind some form of authorization. The `getResponse()` method inside the controller plugin makes this easy as pie.
 
@@ -95,7 +95,7 @@ The module comes with the `uploads()` view helper that makes it really easy to r
 ~~~php
 <?php /** @var Zend\View\Renderer\PhpRenderer $this */ ?>
 
-<?php if ($this->uploads()->getContainer()->has($id)): ?>
-	<img src="<?= $this->uploads($id) ?>">
+<?php if ($this->uploads()->has($id)): ?>
+	<img src="<?= $this->uploads()->get($id) ?>">
 <?php endif ?>
 ~~~

@@ -23,9 +23,12 @@ class Filesystem implements FactoryInterface
 		$config = $services->get('Config');
 		$config = $config['rdn_upload_adapters']['configs']['Filesystem'];
 
-		$helpers = $services->get('ViewHelperManager');
-		$publicPath = call_user_func($helpers->get('BasePath'), $config['public_path']);
+		if ($services->has('ViewHelperManager'))
+		{
+			$helpers = $services->get('ViewHelperManager');
+			$config['public_path'] = call_user_func($helpers->get('BasePath'), $config['public_path']);
+		}
 
-		return new Adapter\Filesystem($config['upload_path'], $publicPath);
+		return new Adapter\Filesystem($config['upload_path'], $config['public_path']);
 	}
 }

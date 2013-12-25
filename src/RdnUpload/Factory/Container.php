@@ -16,6 +16,6 @@ class Container implements FactoryInterface
 		$adapters = $services->get('RdnUpload\Adapter\AdapterManager');
 		$adapter = $adapters->get($config['adapter']);
 
-		return new RdnUpload\Container($adapter);
+		return new RdnUpload\Container($adapter, $config['temp_dir']);
 	}
 }

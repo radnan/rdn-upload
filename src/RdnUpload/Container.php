@@ -14,11 +14,25 @@ class Container implements ContainerInterface
 	 */
 	protected $adapter;
 
-	public function __construct(AdapterInterface $adapter = null)
+	/**
+	 * @var string
+	 */
+	protected $tempDir;
+
+	/**
+	 * @param AdapterInterface $adapter
+	 * @param string $tempDir
+	 */
+	public function __construct(AdapterInterface $adapter = null, $tempDir = null)
 	{
-		if (func_num_args() > 0)
+		$this->tempDir = ini_get('upload_tmp_dir') ?: sys_get_temp_dir();
+		if ($adapter)
 		{
 			$this->setAdapter($adapter);
+		}
+		if ($tempDir)
+		{
+			$this->tempDir = $tempDir;
 		}
 	}
 
@@ -125,7 +139,7 @@ class Container implements ContainerInterface
 	 */
 	protected function generateTempPath()
 	{
-		return tempnam(ini_get('upload_tmp_dir') ?: sys_get_temp_dir(), 'rdnu');
+		return tempnam($this->tempDir, 'rdnu');
 	}
 
 	/**

@@ -9,6 +9,7 @@ return array(
 
 	'rdn_upload' => array(
 		'adapter' => 'Filesystem',
+		'temp_dir' => null,
 	),
 
 	'rdn_upload_adapters' => array(

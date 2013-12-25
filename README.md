@@ -5,6 +5,8 @@ The **RdnUpload** ZF2 module makes it really easy to manage file uploads.
 
 The underlying file operations are abstracted away from the developer. By default files are stored in the local filesystem. But we can easily replace the local adapter with something like Amazon cloud storage.
 
+[![Build Status](https://travis-ci.org/radnan/rdn-upload.png)](https://travis-ci.org/radnan/rdn-upload)
+
 ## How to install
 
 The module is still under development.

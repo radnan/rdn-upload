@@ -2,8 +2,12 @@
 
 return array(
 	'controller_plugins' => array(
+		'aliases' => array(
+			'uploads' => 'RdnUpload:Uploads',
+		),
+
 		'factories' => array(
-			'Uploads' => 'RdnUpload\Factory\Controller\Plugin\Uploads',
+			'RdnUpload:Uploads' => 'RdnUpload\Factory\Controller\Plugin\Uploads',
 		),
 	),
 
@@ -33,8 +37,12 @@ return array(
 	),
 
 	'view_helpers' => array(
+		'aliases' => array(
+			'uploads' => 'RdnUpload:Uploads',
+		),
+
 		'factories' => array(
-			'Uploads' => 'RdnUpload\Factory\View\Helper\Uploads',
+			'RdnUpload:Uploads' => 'RdnUpload\Factory\View\Helper\Uploads',
 		),
 	),
 );

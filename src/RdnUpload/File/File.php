@@ -25,11 +25,6 @@ class File implements FileInterface
 	 */
 	public function __construct($basename, $path)
 	{
-		if (!file_exists($path))
-		{
-			throw new \RuntimeException("File does not exist ($path)");
-		}
-
 		$this->basename = $basename;
 		$this->path = $path;
 	}

@@ -50,6 +50,8 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 	{
 		$config = include __DIR__ .'/../../config/module.config.php';
 
+		$config['rdn_upload_adapters']['configs']['Filesystem']['upload_path'] = vfsStream::url('root/uploads');
+
 		$services = new ServiceManager(new ServiceManagerConfig($config['service_manager']));
 		$services->setService('Config', $config);
 

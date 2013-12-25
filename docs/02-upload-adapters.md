@@ -11,10 +11,10 @@ The `rdn_upload_adapters` configuration option is used to configure the service 
 <?php
 
 return array(
-        'rdn_upload_adapters' => array(
-                'factories' => array(),
-                'invokables' => array(),
-        ),
+	'rdn_upload_adapters' => array(
+		'factories' => array(),
+		'invokables' => array(),
+	),
 );
 ~~~
 

@@ -41,7 +41,9 @@ class Local implements ObjectInterface
 
 	public function getContent()
 	{
-		return readfile($this->path);
+		ob_start();
+		readfile($this->path);
+		return ob_get_clean();
 	}
 
 	public function getBasename()

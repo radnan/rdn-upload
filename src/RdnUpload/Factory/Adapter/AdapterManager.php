@@ -7,12 +7,16 @@ use Zend\ServiceManager\Config;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class AdapterMaanger implements FactoryInterface
+class AdapterManager implements FactoryInterface
 {
 	public function createService(ServiceLocatorInterface $services)
 	{
 		$config = $services->get('Config');
 		$config = new Config($config['rdn_upload_adapters']);
-		return new Adapter\AdapterManager($config);
+
+		$adapters = new Adapter\AdapterManager($config);
+		$adapters->setServiceLocator($services);
+
+		return $adapters;
 	}
 }

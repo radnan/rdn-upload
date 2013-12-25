@@ -16,6 +16,10 @@
 		"zendframework/zend-stdlib": "2.*",
 		"zendframework/zend-view": "2.*"
 	},
+	"require-dev": {
+		"mikey179/vfsStream": "*",
+		"phpunit/phpunit": "3.*"
+	},
 	"autoload": {
 		"psr-0": {
 			"RdnUpload\\": "src/"

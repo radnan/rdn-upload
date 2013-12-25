@@ -100,7 +100,7 @@ class Uploads extends AbstractPlugin
 
 		$img = new \Imagick($temp->getPath());
 		$img->cropThumbnailImage($width, $height);
-		$img->writeimage();
+		$img->writeImage();
 
 		return $this->container->upload($temp);
 	}

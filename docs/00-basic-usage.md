@@ -19,10 +19,10 @@ Activate the module by including it in your `application.config.php` file:
 <?php
 
 return array(
-        'modules' => array(
-                'RdnUpload',
-                // ...
-        ),
+	'modules' => array(
+		'RdnUpload',
+		// ...
+	),
 );
 ~~~
 

@@ -51,6 +51,6 @@ Your project root should look something like this:
  |    `-- uploads/
  |-- module/
  `-- public/
-      |-- files -> ../../data/uploads
+      |-- files -> ../data/uploads
       `-- index.php
 ~~~

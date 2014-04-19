@@ -5,6 +5,7 @@ namespace RdnUpload;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
 use RdnUpload\Adapter\Filesystem;
+use RdnUpload\File\File;
 use Zend\Mvc\Service\ServiceManagerConfig;
 use Zend\ServiceManager\ServiceManager;
 
@@ -44,6 +45,28 @@ class ContainerTest extends \PHPUnit_Framework_TestCase
 		$object = $this->uploads->get('baz.txt');
 		$this->assertEquals('baz.txt', $object->getBasename());
 		$this->assertEquals('Sample baz content', $object->getContent());
+	}
+
+	public function testUpload()
+	{
+		$this->assertTrue($this->vfs->getChild('tmp')->hasChild('foo.txt'));
+		$this->assertFalse($this->vfs->getChild('uploads')->hasChild('bar'));
+
+		$input = new File('foo.txt', vfsStream::url('root/tmp/foo.txt'));
+		$id = $this->uploads->upload($input);
+
+		$this->assertFalse($this->vfs->hasChild('foo.txt'));
+
+		$parts = explode('/', $id);
+		$leaf = array_pop($parts);
+		$child = $this->vfs->getChild('uploads');
+		foreach ($parts as $part)
+		{
+			$this->assertTrue($child->hasChild($part));
+			$child = $child->getChild($part);
+		}
+
+		$this->assertTrue($child->hasChild($leaf));
 	}
 
 	public function testFactory()

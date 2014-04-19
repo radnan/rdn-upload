@@ -101,7 +101,7 @@ class Container implements ContainerInterface
 	{
 		if (empty($id))
 		{
-			throw new \InvalidArgumentException('ID cannot be empty');
+			return false;
 		}
 
 		return $this->adapter->has($id);

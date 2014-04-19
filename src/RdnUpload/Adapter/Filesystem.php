@@ -135,6 +135,11 @@ class Filesystem implements AdapterInterface
 
 	public function has($id)
 	{
+		if (empty($id))
+		{
+			throw new \InvalidArgumentException('ID cannot be empty');
+		}
+
 		return file_exists($this->getFilepath($id));
 	}
 

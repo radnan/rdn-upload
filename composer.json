@@ -9,16 +9,14 @@
 			"email": "rafiadnan47@gmail.com"
 		}
 	],
-	"require": {
+	"require-dev": {
+		"mikey179/vfsStream": "*",
+		"phpunit/phpunit": "3.*",
 		"zendframework/zend-http": "2.*",
 		"zendframework/zend-mvc": "2.*",
 		"zendframework/zend-servicemanager": "2.*",
 		"zendframework/zend-stdlib": "2.*",
 		"zendframework/zend-view": "2.*"
-	},
-	"require-dev": {
-		"mikey179/vfsStream": "*",
-		"phpunit/phpunit": "3.*"
 	},
 	"suggests": {
 		"knplabs/gaufrette": "Provides a lot more adapters"

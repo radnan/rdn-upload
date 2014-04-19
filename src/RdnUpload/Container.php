@@ -158,6 +158,6 @@ class Container implements ContainerInterface
 
 		$filename = trim($filename, '-_.') ?: 'no-name';
 
-		return $filename .'.'. $extension;
+		return $filename . ($extension ? '.'. $extension : '');
 	}
 }

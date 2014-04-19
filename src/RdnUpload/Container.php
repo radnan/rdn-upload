@@ -156,7 +156,7 @@ class Container implements ContainerInterface
 		$filename = preg_replace('/[^a-z0-9\.\-\_]/i', '', $filename);
 		$filename = substr($filename, 0, 100);
 
-		$filename = trim($filename, '-_.');
+		$filename = trim($filename, '-_.') ?: 'no-name';
 
 		return $filename .'.'. $extension;
 	}

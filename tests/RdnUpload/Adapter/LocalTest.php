@@ -8,7 +8,7 @@ use RdnUpload\File\File;
 use Zend\Mvc\Service\ServiceManagerConfig;
 use Zend\ServiceManager\ServiceManager;
 
-class FilesystemTest extends \PHPUnit_Framework_TestCase
+class LocalTest extends \PHPUnit_Framework_TestCase
 {
 	/**
 	 * @var vfsStreamDirectory
@@ -16,7 +16,7 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
 	private $vfs;
 
 	/**
-	 * @var Filesystem
+	 * @var Local
 	 */
 	private $adapter;
 
@@ -30,7 +30,7 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
 				'foo.txt' => 'Sample foo content',
 			),
 		));
-		$this->adapter = new Filesystem(vfsStream::url('root/uploads'), '/files');
+		$this->adapter = new Local(vfsStream::url('root/uploads'), '/files');
 	}
 
 	public function testUpload()
@@ -84,14 +84,14 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
 	{
 		$config = include __DIR__ .'/../../../config/module.config.php';
 
-		$config['rdn_upload_adapters']['configs']['Filesystem']['upload_path'] = vfsStream::url('root/uploads');
+		$config['rdn_upload_adapters']['configs']['Local']['upload_path'] = vfsStream::url('root/uploads');
 
 		$services = new ServiceManager(new ServiceManagerConfig($config['service_manager']));
 		$services->setService('Config', $config);
 
 		$adapters = $services->get('RdnUpload\Adapter\AdapterManager');
-		$adapter = $adapters->get('Filesystem');
+		$adapter = $adapters->get('Local');
 
-		$this->assertInstanceOf('RdnUpload\Adapter\Filesystem', $adapter);
+		$this->assertInstanceOf('RdnUpload\Adapter\Local', $adapter);
 	}
 }

@@ -12,18 +12,21 @@ return array(
 	),
 
 	'rdn_upload' => array(
-		'adapter' => 'Filesystem',
+		'adapter' => 'Local',
 		'temp_dir' => null,
 	),
 
 	'rdn_upload_adapters' => array(
+		'aliases' => array(
+			'Filesystem' => 'Local',
+		),
 		'factories' => array(
-			'Filesystem' => 'RdnUpload\Factory\Adapter\Filesystem',
+			'Local' => 'RdnUpload\Factory\Adapter\Local',
 			'Gaufrette' => 'RdnUpload\Factory\Adapter\Gaufrette',
 		),
 
 		'configs' => array(
-			'Filesystem' => array(
+			'Local' => array(
 				'upload_path' => 'data/uploads',
 				'public_path' => '/files',
 			),

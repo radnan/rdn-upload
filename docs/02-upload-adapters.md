@@ -18,7 +18,7 @@ return array(
 );
 ~~~
 
-## Filesystem
+## Local
 
 A local filesystem adapter is provided with the module. This module uses the following configuration by default:
 
@@ -28,7 +28,7 @@ A local filesystem adapter is provided with the module. This module uses the fol
 return array(
 	'rdn_upload_adapters' => array(
 		'configs' => array(
-			'Filesystem' => array(
+			'Local' => array(
 				'upload_path' => 'data/uploads',
 				'public_path' => '/files',
 			),

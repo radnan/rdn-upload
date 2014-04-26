@@ -8,7 +8,7 @@ The `RdnUpload\Container` service is configured using the `rdn_upload` configura
 
 return array(
 	'rdn_upload' => array(
-		'adapter' => 'Filesystem',
+		'adapter' => 'Local',
 		'temp_dir' => null,
 	),
 );

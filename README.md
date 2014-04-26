@@ -33,7 +33,7 @@ return array(
 All interactions are done through the **upload container**. The upload container allows us to upload, fetch, delete, and optionally download files.
 
 ~~~php
-$adapter = new RdnUpload\Adapter\Filesystem('data/uploads', '/files');
+$adapter = new RdnUpload\Adapter\Local('data/uploads', '/files');
 $uploads = new RdnUpload\Container($adapter);
 
 var_dump($_FILES['foo']);

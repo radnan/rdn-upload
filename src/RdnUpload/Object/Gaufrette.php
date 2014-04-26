@@ -57,6 +57,12 @@ class Gaufrette implements ObjectInterface
 		return $this->file->getSize();
 	}
 
+	public function getContentType()
+	{
+		$info = new \finfo(FILEINFO_MIME_TYPE);
+		return $info->buffer($this->getContent());
+	}
+
 	public function getLastModified()
 	{
 		return new DateTime('@'. $this->file->getMtime());

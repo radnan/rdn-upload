@@ -54,6 +54,7 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
 
 		$this->assertInstanceOf('RdnUpload\Object\ObjectInterface', $object);
 		$this->assertEquals(vfsStream::url('root/uploads/baz.txt'), $object->getPath());
+		$this->assertEquals('text/plain', $object->getContentType());
 	}
 
 	public function testDownload()

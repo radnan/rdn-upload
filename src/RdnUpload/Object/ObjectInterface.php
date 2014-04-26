@@ -45,6 +45,13 @@ interface ObjectInterface
 	public function getContentLength();
 
 	/**
+	 * Get the file's internet media type.
+	 *
+	 * @return string
+	 */
+	public function getContentType();
+
+	/**
 	 * Get the file's last modified date and time.
 	 *
 	 * @return DateTime

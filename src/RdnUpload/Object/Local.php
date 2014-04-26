@@ -61,6 +61,12 @@ class Local implements ObjectInterface
 		return filesize($this->path);
 	}
 
+	public function getContentType()
+	{
+		$info = new \finfo(FILEINFO_MIME_TYPE);
+		return $info->file($this->path);
+	}
+
 	public function getLastModified()
 	{
 		$time = new DateTime;

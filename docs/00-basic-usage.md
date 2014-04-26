@@ -8,7 +8,7 @@ Basic usage
 Use [composer](http://getcomposer.org) to require the `radnan/rdn-upload` package:
 
 ~~~bash
-$ composer require radnan/rdn-upload:1.*
+$ composer require radnan/rdn-upload:2.*
 ~~~
 
 ### 2. Activate module

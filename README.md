@@ -12,7 +12,7 @@ The underlying file operations are abstracted away from the developer. By defaul
 Use composer to require the `radnan/rdn-upload` package:
 
 ~~~bash
-$ composer require radnan/rdn-upload:1.*
+$ composer require radnan/rdn-upload:2.*
 ~~~
 
 Activate the module by including it in your `application.config.php` file:

@@ -59,7 +59,7 @@ class Uploads extends AbstractPlugin
 			$filename = $object->getBasename();
 		}
 
-		if (!pathinfo($filename, PATHINFO_EXTENSION))
+		if (!pathinfo($filename, PATHINFO_EXTENSION) && $object->getExtension())
 		{
 			$filename .= '.'. $object->getExtension();
 		}

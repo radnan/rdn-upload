@@ -10,6 +10,7 @@
 		}
 	],
 	"require-dev": {
+		"knplabs/gaufrette": "*",
 		"mikey179/vfsStream": "*",
 		"phpunit/phpunit": "3.*",
 		"zendframework/zend-http": "2.*",

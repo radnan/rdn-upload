@@ -46,10 +46,11 @@ class Uploads extends AbstractPlugin
 	 *
 	 * @param string $id
 	 * @param string $filename Filename to use instead of the file's actual basename
+	 * @param bool $forceDownload Whether to force client to download the file
 	 *
 	 * @return HttpResponse
 	 */
-	public function getResponse($id, $filename = null)
+	public function getResponse($id, $filename = null, $forceDownload = false)
 	{
 		$object = $this->container->get($id);
 
@@ -68,8 +69,8 @@ class Uploads extends AbstractPlugin
 
 		$response->setContent(new LazyResponse($object));
 		$response->getHeaders()->addHeaders(array(
-			'Content-Type' => 'application/octet-stream',
-			'Content-Disposition' => 'attachment;filename="'. str_replace('"', '\\"', $filename) .'"',
+			'Content-Type' => $object->getContentType() ?: 'application/octet-stream',
+			'Content-Disposition' => ($forceDownload ? 'attachment' : 'inline') .';filename="'. str_replace('"', '\\"', $filename) .'"',
 			'Content-Transfer-Encoding' => 'binary',
 			'Expires' => '-1 year',
 			'Cache-Control' => 'must-revalidate',

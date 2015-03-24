@@ -129,9 +129,9 @@ class Container implements ContainerInterface
 		$basename = $this->sanitize($basename);
 
 		$hash = hash('sha1', uniqid('', true) . mt_rand() . $basename);
-		$prefix = implode(DIRECTORY_SEPARATOR, str_split(substr($hash, 0, 3)));
+		$prefix = implode('/', str_split(substr($hash, 0, 3)));
 
-		return $prefix . DIRECTORY_SEPARATOR . $hash . DIRECTORY_SEPARATOR . $basename;
+		return $prefix .'/'. $hash .'/'. $basename;
 	}
 
 	/**

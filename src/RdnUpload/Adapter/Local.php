@@ -27,6 +27,13 @@ class Local implements AdapterInterface
 	protected $publicPath;
 
 	/**
+	 * A character mask used to trim path separators.
+	 *
+	 * @var string
+	 */
+	protected $pathTrimMask = '\\/';
+
+	/**
 	 * @param string $uploadPath
 	 * @param string $publicPath
 	 *
@@ -45,8 +52,8 @@ class Local implements AdapterInterface
 			throw new \RuntimeException("Cannot write to directory ($uploadPath)");
 		}
 
-		$this->uploadPath = rtrim($uploadPath, DIRECTORY_SEPARATOR);
-		$this->publicPath = rtrim($publicPath, DIRECTORY_SEPARATOR);
+		$this->uploadPath = rtrim($uploadPath, $this->pathTrimMask);
+		$this->publicPath = rtrim($publicPath, $this->pathTrimMask);
 	}
 
 	/**
@@ -65,10 +72,10 @@ class Local implements AdapterInterface
 		}
 		else
 		{
-			$pathPrefix = rtrim($pathPrefix, DIRECTORY_SEPARATOR);
+			$pathPrefix = rtrim($pathPrefix, $this->pathTrimMask);
 		}
 
-		return $pathPrefix . DIRECTORY_SEPARATOR . $id;
+		return $pathPrefix . '/' . $id;
 	}
 
 	/**

@@ -12,7 +12,7 @@
 	"require-dev": {
 		"knplabs/gaufrette": "*",
 		"mikey179/vfsStream": "*",
-		"phpunit/phpunit": "3.*",
+		"phpunit/phpunit": "^6.0 || ^7.0",
 		"zendframework/zend-mvc": "^3.1",
 		"zendframework/zend-hydrator": "^2.3"
 	},

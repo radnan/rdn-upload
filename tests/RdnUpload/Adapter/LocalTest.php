@@ -4,10 +4,11 @@ namespace RdnUpload\Adapter;
 
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
+use PHPUnit\Framework\TestCase;
 use RdnUpload\File\File;
 use Zend\ServiceManager\ServiceManager;
 
-class LocalTest extends \PHPUnit_Framework_TestCase
+class LocalTest extends TestCase
 {
 	/**
 	 * @var vfsStreamDirectory

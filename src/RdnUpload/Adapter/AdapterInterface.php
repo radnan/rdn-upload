@@ -3,7 +3,7 @@
 namespace RdnUpload\Adapter;
 
 use RdnUpload\File\FileInterface;
-use RdnUpload\Object\ObjectInterface;
+use RdnUpload\ContainerObject\ObjectInterface;
 
 /**
  * Upload container adapter for performing file operations.

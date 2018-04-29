@@ -1,7 +1,7 @@
 {
 	"name": "radnan/rdn-upload",
-	"description": "Zend Framework 2 module to manage file uploads easily and securely",
-	"keywords": ["zf2", "zend", "file", "upload", "cloud"],
+	"description": "Zend Framework 2/3 module to manage file uploads easily and securely",
+	"keywords": ["zf2", "zf3", "zendframework", "zend", "file", "upload", "cloud"],
 	"license": "MIT",
 	"authors": [
 		{
@@ -12,12 +12,9 @@
 	"require-dev": {
 		"knplabs/gaufrette": "*",
 		"mikey179/vfsStream": "*",
-		"phpunit/phpunit": "3.*",
-		"zendframework/zend-http": "2.*",
-		"zendframework/zend-mvc": "2.*",
-		"zendframework/zend-servicemanager": "2.*",
-		"zendframework/zend-stdlib": "2.*",
-		"zendframework/zend-view": "2.*"
+		"phpunit/phpunit": "^6.0 || ^7.0",
+		"zendframework/zend-mvc": "^3.1",
+		"zendframework/zend-hydrator": "^2.3"
 	},
 	"suggests": {
 		"knplabs/gaufrette": "Provides a lot more adapters"

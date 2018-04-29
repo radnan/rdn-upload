@@ -5,7 +5,7 @@ namespace RdnUpload\Adapter;
 use Gaufrette\File as GFile;
 use Gaufrette\Filesystem as GFilesystem;
 use RdnUpload\File\FileInterface;
-use RdnUpload\Object;
+use RdnUpload\ContainerObject;
 use Zend\Stdlib\ErrorHandler;
 
 class Gaufrette implements AdapterInterface
@@ -40,7 +40,7 @@ class Gaufrette implements AdapterInterface
 		$this->assertHasObject($id);
 
 		$file = new GFile($id, $this->filesystem);
-		return new Object\Gaufrette($file, $this->publicPath);
+		return new ContainerObject\Gaufrette($file, $this->publicPath);
 	}
 
 	/**

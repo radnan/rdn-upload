@@ -4,8 +4,8 @@ namespace RdnUpload\Controller\Plugin;
 
 use RdnUpload\ContainerInterface;
 use RdnUpload\File\FileInterface;
-use RdnUpload\Object\LazyResponse;
-use RdnUpload\Object\ObjectInterface;
+use RdnUpload\ContainerObject\LazyResponse;
+use RdnUpload\ContainerObject\ObjectInterface;
 use Zend\Http\PhpEnvironment\Response as HttpResponse;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 

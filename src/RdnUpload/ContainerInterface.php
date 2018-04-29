@@ -4,7 +4,7 @@ namespace RdnUpload;
 
 use RdnUpload\Adapter\AdapterInterface;
 use RdnUpload\File\FileInterface;
-use RdnUpload\Object\ObjectInterface;
+use RdnUpload\ContainerObject\ObjectInterface;
 
 /**
  * Container for uploaded files.

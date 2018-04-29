@@ -3,7 +3,7 @@
 namespace RdnUpload\View\Helper;
 
 use RdnUpload\ContainerInterface;
-use RdnUpload\Object\ObjectInterface;
+use RdnUpload\ContainerObject\ObjectInterface;
 use Zend\View\Helper\AbstractHelper;
 
 /**

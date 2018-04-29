@@ -1,6 +1,6 @@
 <?php
 
-namespace RdnUpload\Object;
+namespace RdnUpload\ContainerObject;
 
 use DateTime;
 use Gaufrette\File as GFile;

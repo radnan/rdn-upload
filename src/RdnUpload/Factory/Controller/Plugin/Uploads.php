@@ -2,26 +2,15 @@
 
 namespace RdnUpload\Factory\Controller\Plugin;
 
-use RdnUpload\ContainerInterface;
+use Interop\Container\ContainerInterface;
 use RdnUpload\Controller\Plugin;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 class Uploads implements FactoryInterface
 {
-	public function createService(ServiceLocatorInterface $plugins)
+	public function __invoke(ContainerInterface $services, $requestedName, array $options = null)
 	{
-		if ($plugins instanceof ServiceLocatorAwareInterface)
-		{
-			$services = $plugins->getServiceLocator();
-		}
-		else
-		{
-			$services = $plugins;
-		}
-
-		/** @var ContainerInterface $uploads */
+		/** @var \RdnUpload\ContainerInterface $uploads */
 		$uploads = $services->get('RdnUpload\Container');
 		return new Plugin\Uploads($uploads);
 	}

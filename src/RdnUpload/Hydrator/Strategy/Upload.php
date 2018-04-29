@@ -4,7 +4,7 @@ namespace RdnUpload\Hydrator\Strategy;
 
 use RdnUpload\ContainerInterface;
 use RdnUpload\File;
-use Zend\Stdlib\Hydrator\Strategy\StrategyInterface;
+use Zend\Hydrator\Strategy\StrategyInterface;
 
 class Upload implements StrategyInterface
 {

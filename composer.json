@@ -1,7 +1,7 @@
 {
 	"name": "radnan/rdn-upload",
-	"description": "Zend Framework 2 module to manage file uploads easily and securely",
-	"keywords": ["zf2", "zend", "file", "upload", "cloud"],
+	"description": "Zend Framework 2/3 module to manage file uploads easily and securely",
+	"keywords": ["zf2", "zf3", "zendframework", "zend", "file", "upload", "cloud"],
 	"license": "MIT",
 	"authors": [
 		{

@@ -1,7 +1,7 @@
 RdnUpload
 =========
 
-The **RdnUpload** ZF2 module makes it really easy to manage file uploads.
+The **RdnUpload** ZF3 module makes it really easy to manage file uploads.
 
 The underlying file operations are abstracted away from the developer. By default files are stored in the local filesystem. But we can easily replace the local adapter with something like Amazon cloud storage.
 
@@ -12,7 +12,7 @@ The underlying file operations are abstracted away from the developer. By defaul
 Use composer to require the `radnan/rdn-upload` package:
 
 ~~~bash
-$ composer require radnan/rdn-upload:2.*
+$ composer require radnan/rdn-upload:3.*
 ~~~
 
 Activate the module by including it in your `application.config.php` file:

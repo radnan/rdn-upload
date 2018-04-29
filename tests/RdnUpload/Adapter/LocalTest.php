@@ -52,7 +52,7 @@ class LocalTest extends \PHPUnit_Framework_TestCase
 
 		$object = $this->adapter->get('baz.txt');
 
-		$this->assertInstanceOf('RdnUpload\Object\ObjectInterface', $object);
+		$this->assertInstanceOf('RdnUpload\ContainerObject\ObjectInterface', $object);
 		$this->assertEquals(vfsStream::url('root/uploads/baz.txt'), $object->getPath());
 		$this->assertEquals('text/plain', $object->getContentType());
 	}

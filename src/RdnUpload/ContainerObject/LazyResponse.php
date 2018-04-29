@@ -1,6 +1,6 @@
 <?php
 
-namespace RdnUpload\Object;
+namespace RdnUpload\ContainerObject;
 
 /**
  * Renders a file's content lazily.

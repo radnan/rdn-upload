@@ -4,7 +4,7 @@ namespace RdnUpload\Adapter;
 
 use RdnUpload\File;
 use RdnUpload\File\FileInterface;
-use RdnUpload\Object;
+use RdnUpload\ContainerObject;
 use Zend\Stdlib\ErrorHandler;
 
 /**
@@ -118,7 +118,7 @@ class Local implements AdapterInterface
 			throw new \RuntimeException("File does not exist ($id)");
 		}
 
-		$file = new Object\Local($this->getFilepath($id), $this->getFilepath($id, $this->publicPath));
+		$file = new ContainerObject\Local($this->getFilepath($id), $this->getFilepath($id, $this->publicPath));
 		return $file;
 	}
 

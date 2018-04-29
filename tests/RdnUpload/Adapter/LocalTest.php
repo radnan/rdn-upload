@@ -5,7 +5,6 @@ namespace RdnUpload\Adapter;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
 use RdnUpload\File\File;
-use Zend\Mvc\Service\ServiceManagerConfig;
 use Zend\ServiceManager\ServiceManager;
 
 class LocalTest extends \PHPUnit_Framework_TestCase
@@ -86,7 +85,7 @@ class LocalTest extends \PHPUnit_Framework_TestCase
 
 		$config['rdn_upload_adapters']['configs']['Local']['upload_path'] = vfsStream::url('root/uploads');
 
-		$services = new ServiceManager(new ServiceManagerConfig($config['service_manager']));
+		$services = new ServiceManager($config['service_manager']);
 		$services->setService('Config', $config);
 
 		$adapters = $services->get('RdnUpload\Adapter\AdapterManager');

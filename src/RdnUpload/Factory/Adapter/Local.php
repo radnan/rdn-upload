@@ -2,24 +2,14 @@
 
 namespace RdnUpload\Factory\Adapter;
 
+use Interop\Container\ContainerInterface;
 use RdnUpload\Adapter;
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 class Local implements FactoryInterface
 {
-	public function createService(ServiceLocatorInterface $adapters)
+	public function __invoke(ContainerInterface $services, $requestedName, array $options = null)
 	{
-		if ($adapters instanceof ServiceLocatorAwareInterface)
-		{
-			$services = $adapters->getServiceLocator();
-		}
-		else
-		{
-			$services = $adapters;
-		}
-
 		$config = $services->get('Config');
 		if (isset($config['rdn_upload_adapters']['configs']['Filesystem']))
 		{
